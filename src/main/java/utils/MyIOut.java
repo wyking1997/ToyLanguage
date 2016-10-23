@@ -9,4 +9,6 @@ public interface MyIOut<T> {
     public T get(int index) throws IndexOutOfBoundsException;
     public boolean isEmpty();
     public void remove(int index) throws IndexOutOfBoundsException;
+
+    public String toString();
 }

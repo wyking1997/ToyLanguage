@@ -27,4 +27,8 @@ public class ExecutionOut<T> implements MyIOut<T> {
     public void remove(int index) throws IndexOutOfBoundsException{
         arr.remove(index);
     };
+
+    public String toString(){
+        return arr.toString();
+    };
 }

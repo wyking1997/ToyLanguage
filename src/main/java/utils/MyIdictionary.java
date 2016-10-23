@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.Set;
+
 /**
  * Created by Wyking on 10/23/2016.
  */
@@ -10,4 +12,6 @@ public interface MyIDictionary<S,I> {
     public I get(S key);
     public boolean isEmpty();
     public void put(S key, I value);
+
+    public String toString();
 }

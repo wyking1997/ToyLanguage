@@ -22,4 +22,8 @@ public class ExecutionStack<T> implements MyIStack<T> {
     public boolean isEmpty(){
         return (stack.isEmpty());
     };
+
+    public String toString(){
+        return stack.toString();
+    };
 }
