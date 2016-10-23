@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * Created by Wyking on 10/23/2016.
  */
-public class ExecutionStack<T> implements MyIstack<T>{
+public class ExecutionStack<T> implements MyIStack<T> {
 
     Stack<T> stack;
 

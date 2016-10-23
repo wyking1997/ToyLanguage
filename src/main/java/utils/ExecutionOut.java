@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by Wyking on 10/23/2016.
  */
-public class ExecutionOut<T> implements MyIlis<T> {
+public class ExecutionOut<T> implements MyIOut<T> {
 
     ArrayList<T> arr;
     ExecutionOut(){

@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Created by Wyking on 10/23/2016.
  */
-public class ExecutionDictionary<S,I> implements MyIdictionary<S,I> {
+public class ExecutionDictionary<S,I> implements MyIDictionary<S,I> {
 
     Map<S,I> map;
     ExecutionDictionary(){

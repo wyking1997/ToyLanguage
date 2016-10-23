@@ -3,7 +3,7 @@ package utils;
 /**
  * Created by Wyking on 10/23/2016.
  */
-public interface MyIdictionary<S,I> {
+public interface MyIDictionary<S,I> {
     public void clear();
     public boolean	containsKey(S key);
     public boolean	containsValue(I value);
