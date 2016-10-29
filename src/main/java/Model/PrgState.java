@@ -12,7 +12,7 @@ public class PrgState {
     MyIDictionary<String, Integer> exDict;
     MyIOut<Integer> exOut;
 
-    PrgState(MyIStack<IStm> st, MyIDictionary<String, Integer> dt, MyIOut<Integer> out){
+    public PrgState(MyIStack<IStm> st, MyIDictionary<String, Integer> dt, MyIOut<Integer> out){
         exStack = st;
         exDict = dt;
         exOut = out;

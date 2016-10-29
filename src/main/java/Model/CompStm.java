@@ -9,7 +9,7 @@ public class CompStm implements IStm {
     IStm st1;
     IStm st2;
 
-    CompStm(IStm s1, IStm s2){
+    public CompStm(IStm s1, IStm s2){
         st1 = s1;
         st2 = s2;
     }

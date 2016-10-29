@@ -9,6 +9,10 @@ import utils.MyIOut;
 public class PrintStm implements IStm {
     private Exp exp;
 
+    public PrintStm(Exp e){
+        exp = e;
+    }
+
     public PrgState execute(PrgState state) throws Exception {
 
         MyIOut<Integer> out = state.getExOut();
