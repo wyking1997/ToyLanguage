@@ -29,4 +29,8 @@ public class PrgState {
     public MyIOut<Integer> getExOut() {
         return exOut;
     }
+
+    public String toString(){
+        return "Stack: " + exStack.toString() + "\nSymbolTable: " + exDict.toString() + "\nOutput: " + exOut.toString();
+    }
 }

@@ -30,6 +30,15 @@ public class ExecutionStack<T> implements MyIStack<T> {
     };
 
     public String toString(){
-        return stack.toString();
+
+        String s = "[";
+        Stack<T> s2 = (Stack<T>) stack.clone();
+        while (!s2.isEmpty()){
+            T el = s2.pop();
+            s += el.toString() + ";";
+        }
+        if (s == "[")
+            return s + "]";
+        return s.substring(0, s.length() - 1) + "]";
     };
 }

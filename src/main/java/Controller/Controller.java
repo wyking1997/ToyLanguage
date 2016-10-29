@@ -25,7 +25,7 @@ public class Controller {
         MyIStack<IStm> stack = state.getExStack();
         IStm statement = stack.pop();
         statement.execute(state);
-        System.out.println(state + "\n\n");
+        System.out.println(state + "\n");
     }
 
     public void executeAllStep() throws Exception {

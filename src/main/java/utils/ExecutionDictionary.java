@@ -37,6 +37,7 @@ public class ExecutionDictionary<S,I> implements MyIDictionary<S,I> {
             return map.get(key);
         throw new MyException("Unknown variable: '" + key.toString() + "'");
     };
+
     public boolean isEmpty(){
 
         return map.isEmpty();
@@ -48,7 +49,17 @@ public class ExecutionDictionary<S,I> implements MyIDictionary<S,I> {
     };
 
     public String toString(){
+        String res = "{";
         Iterator<S> it = map.keySet().iterator();
-        return it.toString();
-    };
+
+        while (it.hasNext())
+            try {
+                S s = it.next();
+                res += "[" + s + "=" + this.get(s) + "] ";
+            } catch (Exception e) {
+                System.out.print(e.getMessage());
+            }
+
+        return res + "}";
+    }
 }

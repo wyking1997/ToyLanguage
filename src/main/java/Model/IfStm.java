@@ -24,6 +24,6 @@ public class IfStm implements IStm {
     }
 
     public String toString(){
-        return "if " + exp.toString() + " then " + trueS.toString() + "\n   else " + falseS.toString();
+        return "if (" + exp.toString() + ") then " + trueS.toString() + " else " + falseS.toString();
     }
 }
