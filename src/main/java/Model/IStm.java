@@ -1,9 +1,11 @@
 package Model;
 
+import utils.MyException;
+
 /**
  * Created by Wyking on 10/23/2016.
  */
 public interface IStm {
-    public PrgState execute(PrgState state);
-    public String toString();
+    PrgState execute(PrgState state) throws Exception;
+    String toString();
 }

@@ -11,26 +11,39 @@ import java.util.Set;
 public class ExecutionDictionary<S,I> implements MyIDictionary<S,I> {
 
     Map<S,I> map;
-    ExecutionDictionary(){
+    public ExecutionDictionary(){
+
         map = new HashMap<S, I>();
     }
 
     public void clear(){
+
         map.clear();
     };
+
     public boolean containsKey(S key){
+
         return map.containsKey(key);
     };
+
     public boolean containsValue(I value){
+
         return map.containsKey(value);
     };
-    public I get(S key){
-        return map.get(key);
+
+    public I get(S key) throws Exception{
+
+        if(this.containsKey(key))
+            return map.get(key);
+        throw new MyException("Unknown variable: '" + key.toString() + "'");
     };
     public boolean isEmpty(){
+
         return map.isEmpty();
     };
+
     public void put(S key, I value){
+
         map.put(key, value);
     };
 
