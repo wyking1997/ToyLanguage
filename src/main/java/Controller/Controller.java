@@ -3,6 +3,7 @@ package Controller;
 import Model.IStm;
 import Model.PrgState;
 import Repository.MyIRepository;
+import utils.MyException;
 import utils.MyIStack;
 
 /**
@@ -20,20 +21,23 @@ public class Controller {
         repo.add(state);
     }
 
-    public void executeOneStep() throws Exception{
+    public String executeOneStep() throws Exception{
         PrgState state = repo.get(0);
         MyIStack<IStm> stack = state.getExStack();
         IStm statement = stack.pop();
         statement.execute(state);
-        System.out.println(state + "\n");
+        return state.toString();
     }
 
     public void executeAllStep() throws Exception {
         PrgState state = repo.get(0);
         MyIStack<IStm> stack = state.getExStack();
+        String data;
 
         while (!stack.isEmpty())
-            executeOneStep();
-
+            try {
+                data = executeOneStep();
+                repo.write_to_file(data);
+            }catch(MyException e){}
     }
 }
