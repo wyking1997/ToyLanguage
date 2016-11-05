@@ -3,6 +3,8 @@ import Model.*;
 import Repository.Repository;
 import utils.*;
 
+import java.io.BufferedReader;
+
 /**
  * Created by Wyking on 10/29/2016.
  */
@@ -15,6 +17,7 @@ public class Main {
         MyIStack<IStm> stack = new ExecutionStack<IStm>();
         MyIDictionary<String, Integer> smbTable = new ExecutionDictionary<String, Integer>();
         MyIOut<Integer> out = new ExecutionOut<Integer>();
+        MyIFileTable<Integer,Pair<String,BufferedReader>> flTable = new ExecutionFileTable<Integer, Pair<String,BufferedReader>>();
 
         IStm stm1 = new CompStm(new PrintStm(new ConstExp(10)), new PrintStm(new ConstExp(100)));
         IStm stm22 = new CompStm(new AssingnStm("a", new ConstExp(10)), new CompStm(new AssingnStm("b", new ConstExp(45)),
@@ -26,9 +29,12 @@ public class Main {
                                                             new PrintStm(new ConstExp(0)));
         IStm stm4 = new CompStm(stm2,stm3);
 
-        stack.push(stm1);
+        IStm stm5 = new CompStm(new OpenRFile("x","da.txt"),new CompStm(new readFile(new VarExp("a"),"da.txt"),
+                                        new readFile(new VarExp("b"),"da.txt")));
 
-        PrgState state = new PrgState(stack, smbTable, out);
+        stack.push(stm5);
+
+        PrgState state = new PrgState(stack, smbTable, out, flTable);
 
         c.add(state);
 

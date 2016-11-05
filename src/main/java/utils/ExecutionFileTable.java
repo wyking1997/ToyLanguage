@@ -33,4 +33,12 @@ public class ExecutionFileTable<I,T> implements MyIFileTable<I,T>{
         map.remove(key);
     }
 
+    public String toString(){
+        String res = "FileTable\n";
+        for (I i : map.keySet()){
+            res = res + i + " --> " + map.get(i).toString() + "\n";
+        }
+        return res + "::::::::::::::::\n";
+    }
+
 }

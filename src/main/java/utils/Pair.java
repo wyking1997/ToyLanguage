@@ -27,4 +27,8 @@ public class Pair<S,T> {
     public void setSecondEl(T secondEl) {
         this.secondEl = secondEl;
     }
+
+    public String toString(){
+        return firstEl.toString();
+    }
 }

@@ -44,6 +44,6 @@ public class PrgState {
     }
 
     public String toString(){
-        return exStack.toString() + exDict.toString() + exOut.toString();
+        return exStack.toString() + exDict.toString() + exOut.toString() +exFlTable.toString();
     }
 }

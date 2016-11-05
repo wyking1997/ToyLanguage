@@ -3,8 +3,7 @@ package Repository;
 import Model.PrgState;
 import utils.MyException;
 
-import java.io.File;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 
 /**
@@ -38,18 +37,18 @@ public class Repository implements MyIRepository {
     }
 
     public void logPrgStateExec(String data) throws Exception {
-        File file;
+
+        FileWriter fw;
         PrintWriter pw;
+
         try{
-            file = new File(file_name);
-            if (!file.exists())
-                file.createNewFile();
-            pw = new PrintWriter(file);
-        }catch(Exception E){
+            fw = new FileWriter(file_name, true);
+            pw = new PrintWriter(fw, true);
+        } catch (IOException e) {
             throw new MyException("EROR AT PRINTWRITER");
         }
 
-        pw.append("\n" + data + "\n");
+        pw.write(data + "\n");
         pw.close();
     }
 
