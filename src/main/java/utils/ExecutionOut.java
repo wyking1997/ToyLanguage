@@ -37,6 +37,10 @@ public class ExecutionOut<T> implements MyIOut<T> {
     };
 
     public String toString(){
-        return arr.toString();
+        String res = "OutputTable:\n";
+        for (T el:arr) {
+            res += el + "\n";
+        }
+        return res + "::::::::::::::::\n";
     };
 }

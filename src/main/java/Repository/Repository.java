@@ -22,7 +22,7 @@ public class Repository implements MyIRepository {
     }
     public Repository(){
 
-        this("default");
+        this("default.txt");
     }
 
     public void add(PrgState state) {
@@ -37,7 +37,7 @@ public class Repository implements MyIRepository {
         return ls.get(position);
     }
 
-    public void write_to_file(String data) throws Exception{
+    public void logPrgStateExec(String data) throws Exception {
         File file;
         PrintWriter pw;
         try{
@@ -52,4 +52,5 @@ public class Repository implements MyIRepository {
         pw.append("\n" + data + "\n");
         pw.close();
     }
+
 }

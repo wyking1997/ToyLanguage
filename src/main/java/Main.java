@@ -26,7 +26,7 @@ public class Main {
                                                             new PrintStm(new ConstExp(0)));
         IStm stm4 = new CompStm(stm2,stm3);
 
-        stack.push(stm4);
+        stack.push(stm1);
 
         PrgState state = new PrgState(stack, smbTable, out);
 

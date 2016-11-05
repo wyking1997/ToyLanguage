@@ -49,17 +49,16 @@ public class ExecutionDictionary<S,I> implements MyIDictionary<S,I> {
     };
 
     public String toString(){
-        String res = "{";
+        String res = "SymbolsTable:\n";
         Iterator<S> it = map.keySet().iterator();
 
         while (it.hasNext())
             try {
                 S s = it.next();
-                res += "[" + s + "=" + this.get(s) + "] ";
+                res += s + "=" + this.get(s) + "\n";
             } catch (Exception e) {
                 System.out.print(e.getMessage());
             }
-
-        return res + "}";
+        return res + "::::::::::::::::\n";
     }
 }

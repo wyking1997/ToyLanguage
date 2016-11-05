@@ -9,5 +9,5 @@ import utils.MyException;
 public interface MyIRepository {
     void add(PrgState state);
     PrgState get(int position) throws Exception;
-    public void write_to_file(String data) throws Exception;
+    public void logPrgStateExec(String data) throws Exception;
 }

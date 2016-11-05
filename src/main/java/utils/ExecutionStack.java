@@ -31,14 +31,12 @@ public class ExecutionStack<T> implements MyIStack<T> {
 
     public String toString(){
 
-        String s = "[";
+        String s = "ExecutionStack:\n";
         Stack<T> s2 = (Stack<T>) stack.clone();
         while (!s2.isEmpty()){
             T el = s2.pop();
-            s += el.toString() + ";";
+            s += el.toString() + "\n";
         }
-        if (s == "[")
-            return s + "]";
-        return s.substring(0, s.length() - 1) + "]";
+        return s + "::::::::::::::::\n";
     };
 }

@@ -36,8 +36,9 @@ public class Controller {
 
         while (!stack.isEmpty())
             try {
-                data = executeOneStep();
-                repo.write_to_file(data);
+                data = executeOneStep() + "\n";
+                System.out.println(data);
+                repo.logPrgStateExec(data);
             }catch(MyException e){}
     }
 }
